@@ -1,0 +1,68 @@
+//Created by: Khoa
+//Created on: Feb 20
+//This program is a rock, paper, scissors game.
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Assign2 {
+
+	public static void main(String[] args) {
+		
+		String computRPS = "";
+		Scanner input = new Scanner(System.in);
+		String userInput = "";
+		Random rand = new Random();
+		
+		System.out.println("You're playing rock, paper scissors. Please choose rock, paper or scissors.");
+		userInput = input.next();
+		
+		//Generates random number. This number will be used to see if the computer chose rock, paper or scissors.
+		int number = rand.nextInt(3);
+		number = number + 1;
+		
+		//Using the random number, this if statement will be used to see if the computer chose rock, paper or scissors.
+		if (number == 1) {
+			computRPS = "rock";
+		}
+		else if (number == 2) {
+			computRPS = "paper";
+		}
+		else if (number == 3) {
+			computRPS = "scissors";
+		}
+		
+		//If statement if user picks rock.
+		if (userInput.equals("rock") & computRPS.equals("rock")) {
+			System.out.println("The computer chose rock. It's a tie!");
+		}
+		else if (userInput.equals("rock") & computRPS.equals("paper")) {
+			System.out.println("The computer chose paper. You lose...");
+		}
+		else if (userInput.equals("rock") & computRPS.equals("scissors")) {
+			System.out.println("The computer chose scissors. You win!");
+		}
+		//If statement for if user picks paper.
+		else if (userInput.equals("paper") & computRPS.equals("rock")) {
+			System.out.println("The computer chose rock. You win!");
+		}
+		else if (userInput.equals("paper") & computRPS.equals("paper")) {
+			System.out.println("The computer chose paper. It's a tie!");
+		}
+		else if (userInput.equals("paper") & computRPS.equals("scissors")) {
+			System.out.println("The computer chose scissors. You lose...");
+		}
+		//If statement for if user picks scissors.
+		else if (userInput.equals("scissors") & computRPS.equals("rock")) {
+			System.out.println("The computer chose rock. You lose...");
+		}
+		else if (userInput.equals("scissors") & computRPS.equals("paper")) {
+			System.out.println("The computer chose paper. You win!");
+		}
+		else if (userInput.equals("scissors") & computRPS.equals("scissors")) {
+			System.out.println("The computer chose scissors. It's a tie!");
+		}
+
+	}
+
+}
